@@ -6,7 +6,7 @@ best <- function(state, outcome) {
 	if ( ! any(outcome_data$State == state)) stop("invalid state")
 	
 	## valid outcomes to examine
-	valid_outcome <- data.frame(c("heart attack", "heart failure", "pneumonia"),c(13,19,25))
+	valid_outcome <- data.frame(c("heart attack", "heart failure", "pneumonia"),c(11,17,23))
 	if ( ! any(valid_outcome[,1] == outcome)) stop("invalid outcome")
 	
 	## return hospital name in that state with the lowest 30-day death rate
