@@ -24,19 +24,7 @@ rankall <- function(outcome, num = "best") {
 
 		state_hospital_name <- outcome_data$Hospital.Name[hospitals & valid_data]
 		state_hospital_outcome <- hospital_outcome[hospitals & valid_data]
-	
-		# if (state == "AL") {
-			# t_hospital <- state_hospital_name[order(state_hospital_outcome)]
-			# t_outcome <- state_hospital_outcome[order(state_hospital_outcome)]
-			# t_df <- data.frame(t_outcome,t_hospital)
-			#print(t_df)
-			#print(t_df[20,])
-			# df <- data.frame(state_hospital_name[order(state_hospital_outcome)],
-			                 # state_hospital_outcome[order(state_hospital_outcome)])
-			# print(df)
-			# print(df[20,])
-		# }
-		
+			
 		rank <- 0
 		if ( num == "best" ) rank <- 1
 		if ( num == "worst" ) rank <- length(state_hospital_name)
@@ -47,10 +35,6 @@ rankall <- function(outcome, num = "best") {
 		if ( rank != 0) {
 			ranking <- state_hospital_name[order(state_hospital_outcome,state_hospital_name)]
 			
-			#rank_hospitals <- state_hospital_name[order(state_hospital_outcome)]
-			#rank_outcome <- state_hospital_outcome[order(state_hospital_outcome)]
-	
-			#ranked_hospital <- sort(rank_hospitals[rank_outcome == rank_outcome[rank]])
 			row <- list(ranking[rank],state)
 		}
 		ranked_output <- rbind(ranked_output,row)
